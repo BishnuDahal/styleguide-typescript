@@ -1,7 +1,6 @@
 import {Fragment, useState} from 'react'
 import {Dialog, Menu, Transition} from '@headlessui/react'
 import UserIcon from "./assets/icons/userIcon.svg"
-import AddIcon from "./assets/icons/addIcon.svg"
 import DibTechLogo from "./assets/icons/dibtechLogo.svg"
 import { removeLocalKey } from './helpers/sessionKey'
 
@@ -18,8 +17,6 @@ const DashboardLayout = (props:Props) => {
   const handleLogout = () => {
     removeLocalKey("token")
     window.location.replace(window.location.origin)
-  }
-  const handleOpenAddPopup = ()=>{
   }
 
   return (
@@ -181,10 +178,6 @@ const DashboardLayout = (props:Props) => {
           <div className="py-6">
             <div className="max-w-7xl flex justify-between mx-auto px-4 sm:px-6 md:px-8">
               <div>
-              </div>
-              <div className={"bg-primary h-12 w-12 flex p-[10px] shadow rounded-xl cursor-pointer"}
-                   onClick={() => handleOpenAddPopup()}>
-                <img className={"cursor-pointer"} src={AddIcon} alt="Add"/>
               </div>
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">

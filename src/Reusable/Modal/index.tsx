@@ -12,28 +12,23 @@ interface IModal {
 }
 
 const Modal = (props: IModal) => {
-  const { open, setOpen, children, title, size="min-w-md" } = props;
+  const { open, setOpen, children, title, size="max-w-xl" } = props;
 
 
   const cancelButtonRef = useRef(null);
 
-  const handleClose = () => {
-    setOpen(false)
-  }
-
   return (
-    <div>
+    <div className="w-full m-auto">
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
           static
-          className="fixed z-20 inset-0 overflow-y-auto flex justify-center items-center"
-          // className="fixed inset-0 z-20 overflow-y-auto flex justify-center items-center"
+          className="fixed z-20 inset-0 overflow-y-auto"
           initialFocus={cancelButtonRef}
           open={open}
-          onClose={handleClose}
+          onClose={()=>setOpen(false)}
         >
-          <div className="flex items-end justify-center min-h-screen pt-2 px-4 text-center sm:block sm:p-0">
+          <div className="flex items-center justify-center min-h-screen pt-2 px-4 text-center sm:block sm:p-0">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -63,7 +58,7 @@ const Modal = (props: IModal) => {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <div
-                className={classNames(size, 'inline-block w-full p-6 overflow-hidden text-center align-middle transition-all transform bg-white shadow-xl rounded-2xl')}>
+                className={classNames(size, "inline-block w-full p-6 overflow-hidden text-center align-middle transition-all transform bg-white shadow-xl rounded-2xl")}>
                 <div className="flex justify-between">
                <div></div>
                 <Dialog.Title
@@ -72,7 +67,7 @@ const Modal = (props: IModal) => {
                 >
                   {title}
                 </Dialog.Title>
-                <div className="flex w-[32px] h-[32px] bg-[#E0E0E0] rounded-full p-2 cursor-pointer">
+                <div className="flex w-[32px] h-[32px] bg-[#E0E0E0] rounded-full p-2  cursor-pointer">
                   <img
                     src={CrossIcon}
                     alt=""

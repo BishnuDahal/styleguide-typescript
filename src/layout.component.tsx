@@ -3,6 +3,7 @@ import {Dialog, Menu, Transition} from '@headlessui/react'
 import UserIcon from "./assets/icons/userIcon.svg"
 import DibTechLogo from "./assets/icons/dibtechLogo.svg"
 import { removeLocalKey } from './helpers/sessionKey'
+import { classNames } from './utils/classNames'
 
 type Props ={
     children:any;
@@ -135,10 +136,10 @@ const DashboardLayout = (props:Props) => {
                         {({active}) => (
                           <a
                             href={"/profile"}
-                            // className={classNames(
-                            //   active ? 'bg-gray-100' : '',
-                            //   'block px-4 py-2 text-sm text-gray-700'
-                            // )}
+                            className={classNames(
+                              active ? 'bg-gray-100' : '',
+                              'block px-4 py-2 text-sm text-gray-700'
+                            )}
                           >
                             {"Profile"}
                           </a>
@@ -154,20 +155,6 @@ const DashboardLayout = (props:Props) => {
               )}
             </Menu>
             <div className="mt-5 flex-1 flex flex-col">
-              {/* <nav className="flex-1 px-2 space-y-1">
-                {navigation.map((item: any) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    // className={({isActive, isPending}) => {
-                    //   return `${isActive ? "bg-primary text-white" : isPending ? "text-indigo-100 hover:bg-indigo-600" : ""} group flex items-center px-2 py-2 text-sm font-medium rounded-md`;
-                    // }}
-                  >
-                    <img src={item.icon} className="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" aria-hidden="true"/>
-                    {item.name}
-                  </a>
-                ))}
-              </nav> */}
               {navigationComponent}
             </div>
           </div>
@@ -183,7 +170,6 @@ const DashboardLayout = (props:Props) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               <div className="py-4">
                 {children}
-                {/* <div className="border-4 border-dashed border-gray-200 rounded-lg h-96"/> */}
               </div>
               {/* /End replace */}
             </div>

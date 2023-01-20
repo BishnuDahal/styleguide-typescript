@@ -4,7 +4,7 @@ import "./global.css?modules=false";
 export { default as Layout } from "./layout.component";
 export { default as Modal } from "./Reusable/Modal/index";
 export { default as InputField } from "./Reusable/Forms/InputField/index";
-export { default as PrimaryButton } from "./Reusable/Buttons/primary";
+export { default as PrimaryButton } from "./Reusable/Buttons/PrimaryButton";
 
 
 

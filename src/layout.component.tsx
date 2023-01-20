@@ -107,15 +107,15 @@ const DashboardLayout = (props:Props) => {
                 <>
                   <div>
                     <Menu.Button
-                      className="max-w-xs flex items-center text-sm rounded-full focus:outline-none">
+                      className="max-w-xs flex gap-2 items-center text-sm rounded-full focus:outline-none">
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-12 w-12 rounded-full"
                         src={UserIcon}
                         alt="User Icons"
                       />
-                      <span className={"m-4 text-left"}>Sandeep Kushwaha <br/><span
-                        className={"text-left text-gray-400"}>Super User</span></span>
+                      <span className={"text-left"}>Sandeep Kushwaha <br/><span
+                        className={"text-left text-xs text-gray-400"}>Super User</span></span>
                     </Menu.Button>
                   </div>
                   <Transition
@@ -138,7 +138,7 @@ const DashboardLayout = (props:Props) => {
                             href={"/profile"}
                             className={classNames(
                               active ? 'bg-gray-100' : '',
-                              'block px-4 py-2 text-sm text-gray-700'
+                              'block px-4 py-1 text-sm text-gray-700'
                             )}
                           >
                             {"Profile"}
@@ -146,15 +146,20 @@ const DashboardLayout = (props:Props) => {
                         )}
                       </Menu.Item>
                       <Menu.Item>
+                      {({active}) => (
                         <p onClick={handleLogout}
-                           className={"block px-4 py-2 text-sm cursor-pointer text-gray-700"}>Sign Out</p>
+                           className={classNames(
+                            active ? 'bg-gray-100' : '',
+                            'block px-4 py-1 text-sm text-gray-700'
+                          )}>Sign Out</p>
+                        )}
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </>
               )}
             </Menu>
-            <div className="mt-5 flex-1 flex flex-col">
+            <div className="mt-5 flex-1 flex flex-col text-sm">
               {navigationComponent}
             </div>
           </div>

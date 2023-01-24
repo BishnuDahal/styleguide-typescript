@@ -1,6 +1,8 @@
 import {Fragment, useState} from 'react'
 import {Dialog, Menu, Transition} from '@headlessui/react'
+//@ts-ignore
 import UserIcon from "./assets/icons/userIcon.svg"
+//@ts-ignore
 import DibTechLogo from "./assets/icons/dibtechLogo.svg"
 import { removeLocalKey } from './helpers/sessionKey'
 import { classNames } from './utils/classNames'

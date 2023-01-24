@@ -4,6 +4,7 @@ import UserIcon from "./assets/icons/userIcon.svg"
 import DibTechLogo from "./assets/icons/dibtechLogo.svg"
 import { removeLocalKey } from './helpers/sessionKey'
 import { classNames } from './utils/classNames'
+import React from 'react'
 
 type Props ={
     children:any;

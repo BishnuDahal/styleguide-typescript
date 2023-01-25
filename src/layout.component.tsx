@@ -15,7 +15,7 @@ type Props ={
 
 const DashboardLayout = (props:Props) => {
 
-    const {children, navigationComponent} = props;
+  const {children, navigationComponent} = props;
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const handleLogout = () => {
